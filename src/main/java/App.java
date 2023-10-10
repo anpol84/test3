@@ -1,4 +1,3 @@
-import java.util.Arrays;
 import java.util.InputMismatchException;
 import java.util.Objects;
 import java.util.Scanner;
@@ -10,7 +9,40 @@ public class App {
 
     }
 
+    public static String currentResult() {
+        String winner = winner();
+        if (winner != null) {
+            return winner;
+        }
+        if (isBoardFilled()) {
+            return "Ничья";
+        }
+        return null;
+    }
+    public static Integer inputNumber(Scanner in) {
+        try {
+            int numInput = in.nextInt();
+            if (numInput > 0 && numInput <= 9) {
+                return numInput;
+            }
+        }
+        catch (InputMismatchException ignored) {}
+        return null;
+    }
+    public static String printBoard() {
+        String output =
+                "|---|---|---|\n" +
+                "| " + board[0] + " | " + board[1] + " | " + board[2] + " |\n" +
+                "|-----------|\n" +
+                "| " + board[3] + " | " + board[4] + " | " + board[5] + " |\n" +
+                "|-----------|\n" +
+                "| " + board[6] + " | " + board[7] + " | " + board[8] + " |\n" +
+                "|-----------|\n";
 
+        System.out.println(output);
+
+        return output;
+    }
     public static String winner() {
         for (int a = 0; a < 8; a++) {
             String line = switch (a) {
@@ -32,14 +64,10 @@ public class App {
             else if (line.equals("000")) {
                 return "0";
             }
-
-
         }
 
         return null;
     }
-
-
     public static boolean isBoardFilled() {
         for (int a = 0; a < 9; a++) {
             if (Objects.equals(board[a], String.valueOf(a + 1))) {

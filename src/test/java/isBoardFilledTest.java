@@ -6,30 +6,32 @@ import org.junit.Assert;
 
 
 public class isBoardFilledTest {
-    private boolean result;
-    private String[] board;
 
-    @Given("^Допустим, игровая доска заполнена$")
+    private String[] board;
+    private boolean result;
+
+    @Given("^The game board is not filled$")
+    public void boardIsNotFilled() {
+        board = new String[] { "1", "2", "X", "O", "5", "X", "O", "X", "9" };
+    }
+
+    @Given("^The game board is filled$")
     public void boardIsFilled() {
-        board = new String[]{"X", "0", "X", "0", "X", "0", "X", "0", "X"};
+        board = new String[] { "X", "O", "X", "O", "X", "O", "X", "O", "X" };
     }
-    @Given("Допустим, игровая доска не заполнена")
-    public void boardIsEmpty() {
-        board = new String[]{"1", "2", "3", "X", "5", "0", "X", "8", "9"};
-    }
-    @When("^вызывается функция isBoardFilled$")
-    public void callIsBoardFilled() {
+
+    @When("^the isBoardFilled function is called$")
+    public void callIsBoardFilledFunction() {
         App.board = board;
         result = App.isBoardFilled();
-
     }
 
-    @Then("^результат должен быть false$")
+    @Then("^the result should be false$")
     public void assertIsBoardFilledFalse() {
         Assert.assertFalse(result);
     }
 
-    @Then("^результат должен быть true$")
+    @Then("^the result should be true$")
     public void assertIsBoardFilledTrue() {
         Assert.assertTrue(result);
     }

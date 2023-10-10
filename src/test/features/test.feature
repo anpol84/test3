@@ -1,12 +1,12 @@
 @all
-Feature: Проверка функции isBoardFilled()
+Feature: isBoardFilled
 
-  Scenario: Игровая доска не заполнена
-    Given Допустим, игровая доска не заполнена
-    When вызывается функция isBoardFilled
-    Then результат должен быть false
+  Scenario: The board is not filled
+    Given The game board is not filled
+    When the isBoardFilled function is called
+    Then the result should be false
 
-  Scenario: Игровая доска заполнена
-    Given Допустим, игровая доска заполнена
-    When вызывается функция isBoardFilled
-    Then результат должен быть true
+  Scenario: The board is filled
+    Given The game board is filled
+    When the isBoardFilled function is called
+    Then the result should be true

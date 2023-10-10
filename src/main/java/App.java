@@ -1,10 +1,11 @@
+import java.util.Arrays;
 import java.util.InputMismatchException;
 import java.util.Objects;
 import java.util.Scanner;
 
 public class App {
-    static String[] board;
-    static String player;
+    public static String[] board;
+    public static String player;
     public static void main(String[] args) {
 
     }

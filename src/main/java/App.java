@@ -85,8 +85,33 @@ public class App {
         }
     }
 
-    public static String makeMove(Scanner scanner) {
-        return null;
+    public static String makeMove(Scanner in) {
+        Integer numInput = inputNumber(in);
+        if (numInput == null) {
+            System.out.println("Неверный ввод. Введите номер ячейки заново:");
+            return null;
+        }
+
+        if (!board[numInput - 1].equals(String.valueOf(numInput))) {
+            System.out.println("Ячейка занята, введите другой номер:");
+            return null;
+        }
+
+        board[numInput - 1] = player;
+
+        if (player.equals("X")) {
+            player = "O";
+        } else {
+            player = "X";
+        }
+
+        printBoard();
+
+        String currentResult = currentResult();
+        if (currentResult == null) {
+            System.out.println(player + " ходит, введите номер ячейки:");
+        }
+        return currentResult();
     }
 
 }

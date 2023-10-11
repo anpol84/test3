@@ -29,7 +29,7 @@ public class MakeMoveTest {
     public void notValidInput(){
         String result = App.makeMove(new Scanner("10"));
         assertNull(result);
-        assertEquals("Неверный ввод. Введите номер ячейки заново:", outContent.toString());
+        assertEquals("Неверный ввод. Введите номер ячейки заново:\n", outContent.toString());
     }
 
     @Test
@@ -37,7 +37,7 @@ public class MakeMoveTest {
         App.board = new String[]{"X", "2", "3", "4", "5", "6", "7","8","9"};
         String result = App.makeMove(new Scanner("1"));
         assertNull(result);
-        assertEquals("Ячейка занята, введите другой номер:", outContent.toString());
+        assertEquals("Ячейка занята, введите другой номер:\n", outContent.toString());
     }
 
     @Test
@@ -47,12 +47,12 @@ public class MakeMoveTest {
         String result = App.makeMove(new Scanner("2"));
         Assertions.assertEquals(
                 "|---|---|---|\n" +
-                        "| X | O | 3 |\n" +
+                        "| X | 0 | 3 |\n" +
                         "|-----------|\n" +
                         "| 4 | 5 | 6 |\n" +
                         "|-----------|\n" +
                         "| 7 | 8 | 9 |\n" +
-                        "|-----------|\n" +
+                        "|-----------|\n\n" +
                         "X ходит, введите номер ячейки:\n",
                 outContent.toString());
         assertEquals("X", App.player);

@@ -84,4 +84,9 @@ public class App {
             System.out.println("Поздравляем! " + winner + " победил!");
         }
     }
+
+    public static String makeMove(Scanner scanner) {
+        return null;
+    }
+
 }

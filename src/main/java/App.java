@@ -122,4 +122,10 @@ public class App {
         }
     }
 
+    public static void printInitialInfo() {
+        System.out.println("КРЕСТИКИ-НОЛИКИ");
+        App.printBoard();
+        System.out.println("'X' ходит первым. Введи номер ячейки, в которое поместишь 'X':");
+    }
+
 }

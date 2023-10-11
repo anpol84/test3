@@ -6,7 +6,18 @@ public class App {
     public static String[] board;
     public static String player;
     public static void main(String[] args) {
+        setInitialSettings();
+        printInitialInfo();
 
+        String winner = null;
+        Scanner in = new Scanner(System.in);
+
+        while (winner == null) {
+            winner = makeMove(in);
+        }
+
+        endTheGame(winner);
+        in.close();
     }
 
     public static String currentResult() {
@@ -61,8 +72,8 @@ public class App {
                 return "X";
             }
 
-            else if (line.equals("000")) {
-                return "0";
+            else if (line.equals("OOO")) {
+                return "O";
             }
         }
 

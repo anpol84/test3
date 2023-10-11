@@ -114,4 +114,12 @@ public class App {
         return currentResult();
     }
 
+    public static void setInitialSettings() {
+        player = "X";
+        board = new String[9];
+        for (int a = 0; a < 9; a++) {
+            board[a] = String.valueOf(a + 1);
+        }
+    }
+
 }

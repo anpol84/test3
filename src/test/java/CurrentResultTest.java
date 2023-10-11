@@ -29,7 +29,7 @@ public class CurrentResultTest {
     }
     @Given("the game has no winner and the board is not filled")
     public void theGameHasNoWinnerAndTheBoardIsNotFilled() {
-        App.board = new String[]{"X", "X", "O", "O", "O", "X", "X", "X", "1"};
+        App.board = new String[]{"X", "X", "O", "O", "O", "X", "X", "X", "9"};
     }
     @Then("the function should return null")
     public void theFunctionShouldReturnNull() {

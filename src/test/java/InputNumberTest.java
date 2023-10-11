@@ -40,7 +40,7 @@ public class InputNumberTest {
         scanner = new Scanner(in);
         result = App.inputNumber(scanner);
     }
-    @Then("the function should return null")
+    @Then("the function should return null1")
     public void theFunctionShouldReturnNull() {
         assertNull(result);
     }
